@@ -24,7 +24,7 @@ if ! command -v tr &> /dev/null; then
 fi
 
 if ! command -v notify-send &> /dev/null; then
-    echo "Error: notify-send is not installed. Please install notify-send and try again."
+    echo "Error: notify-send is not installed. Please install notify-send and try agaiwn."
     echo "You can install it with: sudo apt-get install notify-send (Debian/Ubuntu) or sudo yum install notify-send (CentOS/RHEL)"
     exit 1
 fi
@@ -39,7 +39,7 @@ chmod +x $BINDIR/cursor-update.sh
 cat <<EOF > $HOME/.local/share/applications/cursor.desktop
 [Desktop Entry]
 Name=Cursor
-Exec=$BINDIR/cursor --enable-features=UseOzonePlatform --ozone-platform-hint=wayland %F
+Exec=$BINDIR/cursor --no-sandbox --enable-features=UseOzonePlatform --ozone-platform-hint=wayland %F
 Path=$BINDIR
 Icon=$HOME/.icons/cursor.png
 Type=Application
@@ -51,7 +51,7 @@ MimeType=x-scheme-handler/cursor;
 
 
 [Desktop Action new-empty-window]
-Exec=$BINDIR/cursor --enable-features=UseOzonePlatform --ozone-platform-hint=wayland --new-window %F
+Exec=$BINDIR/cursor --no-sandbox --enable-features=UseOzonePlatform --ozone-platform-hint=wayland --new-window %F
 EOF
 
 $BINDIR/cursor-update.sh

@@ -42,4 +42,4 @@ popd
 
 echo "CURRENT_VERSION=$APPIMAGE_VERSION" > $HOME/.config/Cursor/LastVersion
 # Cleaning Up
-#rm -rf $TEMPDIR
+rm -rf $TEMPDIR
