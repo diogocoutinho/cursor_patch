@@ -23,6 +23,12 @@ if ! command -v tr &> /dev/null; then
     exit 1
 fi
 
+if ! command -v notify-send &> /dev/null; then
+    echo "Error: notify-send is not installed. Please install notify-send and try again."
+    echo "You can install it with: sudo apt-get install notify-send (Debian/Ubuntu) or sudo yum install notify-send (CentOS/RHEL)"
+    exit 1
+fi
+
 mkdir -p $TEMPDIR $BINDIR $HOME/.icons $HOME/.local/share/applications
 
 curl --silent https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor.png --output $HOME/.icons/cursor.png
