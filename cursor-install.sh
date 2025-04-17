@@ -51,7 +51,7 @@ MimeType=x-scheme-handler/cursor;
 
 
 [Desktop Action new-empty-window]
-Exec=$BINDIR/cursor --enable-features=UseOzonePlatformc --ozone-platform-hint --new-window %F
+Exec=$BINDIR/cursor --enable-features=UseOzonePlatform --ozone-platform-hint=wayland --new-window %F
 EOF
 
 $BINDIR/cursor-update.sh
