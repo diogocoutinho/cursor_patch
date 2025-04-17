@@ -2,7 +2,18 @@
 
 BINDIR=$HOME/bin
 TEMPDIR=/tmp/cursor
-APPIMAGE_URL=$(curl --silent 'https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable' | jq '.downloadUrl' | tr -d '"')
+FETCH_STABLE=$(curl --silent 'https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable')
+APPIMAGE_URL=$(echo $FETCH_STABLE | jq '.downloadUrl' | tr -d '"')
+APPIMAGE_VERSION=$(echo $FETCH_STABLE | jq '.version' | tr -d '"')
+
+if [ -f $HOME/.config/Cursor/LastVersion ]; then
+    . $HOME/.config/Cursor/LastVersion
+    if [ "$CURRENT_VERSION" == "$APPIMAGE_VERSION" ]; then
+        notify-send "Updating Cursor" "Already up to date"
+        exit 0
+    fi
+fi
+notify-send "Updating Cursor" "Downloading latest version"
 
 mkdir -p $TEMPDIR
 pushd $TEMPDIR
@@ -28,5 +39,7 @@ $TEMPDIR/appimagetool-x86_64.AppImage squashfs-root/ $BINDIR/cursor
 chmod +x $BINDIR/cursor
 
 popd
+
+echo "CURRENT_VERSION=$APPIMAGE_VERSION" > $HOME/.config/Cursor/LastVersion
 # Cleaning Up
 #rm -rf $TEMPDIR
