@@ -39,7 +39,7 @@ chmod +x $BINDIR/cursor-update.sh
 cat <<EOF > $HOME/.local/share/applications/cursor.desktop
 [Desktop Entry]
 Name=Cursor
-Exec=$BINDIR/cursor --no-sandbox --enable-features=UseOzonePlatform --ozone-platform-hint=wayland %F
+Exec=env ELECTRON_OZONE_PLATFORM_HINT=auto $BINDIR/cursor --no-sandbox %F
 Path=$BINDIR
 Icon=$HOME/.icons/cursor.png
 Type=Application
@@ -51,7 +51,7 @@ MimeType=x-scheme-handler/cursor;
 
 
 [Desktop Action new-empty-window]
-Exec=$BINDIR/cursor --no-sandbox --enable-features=UseOzonePlatform --ozone-platform-hint=wayland --new-window %F
+Exec=env ELECTRON_OZONE_PLATFORM_HINT=auto $BINDIR/cursor --no-sandbox --new-window %F
 EOF
 
 $BINDIR/cursor-update.sh
