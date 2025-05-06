@@ -4,12 +4,18 @@ BINDIR=$HOME/bin
 
 mkdir -p $HOME/.config/systemd/user
 
+if [ "$1" = "--useAsShipped" ]; then
+    command="--useAsShipped"
+else
+    command=""
+fi
+
 cat <<EOF >  $HOME/.config/systemd/user/cursor-update.service
 [Unit]
 Description=Update Cursor
 
 [Service]
-ExecStart=$BINDIR/cursor-update.sh
+ExecStart=$BINDIR/cursor-update.sh $command
 Type=oneshot
 
 [Install]

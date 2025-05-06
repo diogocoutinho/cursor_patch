@@ -21,6 +21,15 @@ Run the following command in your terminal:
 curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-install.sh | bash
 ```
 
+### Quick Install without patching (as shipped)
+
+Run the following command in your terminal:
+```bash
+curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-install.sh | bash  -s -- --useAsShipped
+```
+
+
+
 ### Quick Install for update on login
 
 Run the following command in your terminal:
@@ -28,6 +37,17 @@ Run the following command in your terminal:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-systemd.sh | bash
 ```
+
+
+
+### Quick Install for update on login without patching (as shipped)
+
+Run the following command in your terminal:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-systemd.sh | bash -s -- --useAsShipped
+```
+
 
 
 ### Manual Install

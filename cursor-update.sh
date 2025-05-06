@@ -20,6 +20,20 @@ pushd $TEMPDIR
 
 curl $APPIMAGE_URL --output $TEMPDIR/cursor.AppImage.original 
 chmod +x $TEMPDIR/cursor.AppImage.original
+# Check if the first argument is --useAsShipped
+if [ "$1" = "--useAsShipped" ]; then
+    # If --useAsShipped is provided, skip the extraction and modification
+    mkdir -p $BINDIR
+    cp $TEMPDIR/cursor.AppImage.original $BINDIR/cursor
+    chmod +x $BINDIR/cursor
+    
+    # Clean up and exit
+    popd
+    echo "CURRENT_VERSION=$APPIMAGE_VERSION" > $HOME/.config/Cursor/LastVersion
+    rm -rf $TEMPDIR
+    notify-send "Updating Cursor" "Updated to version $APPIMAGE_VERSION (as shipped)"
+    exit 0
+fi
 
 # Extract the AppImage
 $TEMPDIR/cursor.AppImage.original --appimage-extract
