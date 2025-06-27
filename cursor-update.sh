@@ -43,7 +43,7 @@ pushd $TEMPDIR
 curl $APPIMAGE_URL --output $TEMPDIR/cursor.AppImage.original
 chmod +x $TEMPDIR/cursor.AppImage.original
 
-if [ "$1" = "--useAsShipped" ]; then
+if [ "$USE_AS_SHIPPED" = "1" ]; then
   # If --useAsShipped is provided, skip the extraction and modification
   mkdir -p $BINDIR
   cp $TEMPDIR/cursor.AppImage.original $BINDIR/cursor
