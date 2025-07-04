@@ -2,7 +2,8 @@
 
 BINDIR=$HOME/bin
 TEMPDIR=/tmp/cursor
-FETCH_STABLE=$(curl --silent 'https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable')
+
+FETCH_STABLE=$(curl --silent 'https://cursor.com/api/download?platform=linux-x64&releaseTrack=stable')
 APPIMAGE_URL=$(echo $FETCH_STABLE | jq '.downloadUrl' | tr -d '"')
 APPIMAGE_VERSION=$(echo $FETCH_STABLE | jq '.version' | tr -d '"')
 
