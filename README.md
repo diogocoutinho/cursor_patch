@@ -18,14 +18,14 @@ A maintenance script for enhancing Cursor editor on Linux systems. Removes windo
 Run the following command in your terminal:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor-install.sh | bash
 ```
 
 ### Quick Install without patching (as shipped)
 
 Run the following command in your terminal:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-install.sh | bash  -s -- --useAsShipped
+curl -fsSL https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor-install.sh | bash  -s -- --useAsShipped
 ```
 
 
@@ -35,7 +35,7 @@ curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-i
 Run the following command in your terminal:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-systemd.sh | bash
+curl -fsSL https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor-systemd.sh | bash
 ```
 
 
@@ -45,7 +45,7 @@ curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-s
 Run the following command in your terminal:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-systemd.sh | bash -s -- --useAsShipped
+curl -fsSL https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor-systemd.sh | bash -s -- --useAsShipped
 ```
 
 
@@ -55,7 +55,7 @@ curl -fsSL https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-s
 1. Download the script:
 
 ```bash
-wget https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-install.sh
+wget https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor-install.sh
 ```
 
 2. Run the script:
