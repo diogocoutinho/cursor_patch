@@ -31,9 +31,9 @@ fi
 
 mkdir -p $TEMPDIR $BINDIR $HOME/.icons $HOME/.local/share/applications
 
-curl --silent https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor.png --output $HOME/.icons/cursor.png
+curl --silent https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor.png --output $HOME/.icons/cursor.png
 
-curl --silent https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-update.sh --output $BINDIR/cursor-update.sh
+curl --silent https://raw.githubusercontent.com/diogocoutinho/cursor_patch/main/cursor-update.sh --output $BINDIR/cursor-update.sh
 chmod +x $BINDIR/cursor-update.sh
 
 cat <<EOF > $HOME/.local/share/applications/cursor.desktop
